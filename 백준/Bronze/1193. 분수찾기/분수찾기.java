@@ -7,18 +7,21 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         int X = Integer.parseInt(br.readLine());
-        int line = 0;
-        int count = 0;
+        int line = 1;
+        int count = 1;
 
-        while(count < X) {
+        while(true) {
+            X = X - line;
+            if(X <= 0) {
+                count = X + line;
+                break;
+            }
             line++;
-            count = (line * (line + 1)) / 2;
         }
-
         if (line % 2 == 0) {
-            System.out.println((X - count + line) + "/" + (count - X + 1));
+            System.out.println(count + "/" + (line - count + 1));
         } else {
-            System.out.println((count - X + 1) + "/" + (X - count + line));
+            System.out.println((line - count + 1) + "/" + count);
         }
     }
 }

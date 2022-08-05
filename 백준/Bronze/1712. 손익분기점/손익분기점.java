@@ -1,17 +1,19 @@
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
-        int A = sc.nextInt();
-        int B = sc.nextInt();
-        int C = sc.nextInt();
-
-        // nC = A + nB
-        // => nC - nB = A
-        // => n(C - B) = A
-        // => n = A / (C - B)
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+        
+        int A = Integer.parseInt(st.nextToken());
+        int B = Integer.parseInt(st.nextToken());
+        int C = Integer.parseInt(st.nextToken());
+        
+        br.close();
+        
         if(C <= B) {
             System.out.println(-1);
         } else {

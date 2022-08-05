@@ -1,7 +1,6 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.StringTokenizer;
 
 public class Main {
 
@@ -18,9 +17,9 @@ public class Main {
     }
 
     private static void get_alphanumeric() throws IOException {
-        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
-        int R = Integer.parseInt(st.nextToken());
-        String S = st.nextToken();
+        String[] str = br.readLine().split(" ");
+        int R = Integer.parseInt(str[0]);
+        String S = str[1];
 
         for(int i = 0; i < S.length(); i++) {
             for(int j = 0; j < R; j++) {

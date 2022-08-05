@@ -6,53 +6,18 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String str = br.readLine();
+
         int count = 0;
 
         for(int i = 0; i < str.length(); i++) {
-            switch(str.charAt(i)) {
-                case 'A' :
-                case 'B' :
-                case 'C' :
-                    count += 3;
-                    break;
-                case 'D' :
-                case 'E' :
-                case 'F' :
-                    count += 4;
-                    break;
-                case 'G' :
-                case 'H' :
-                case 'I' :
-                    count += 5;
-                    break;
-                case 'J' :
-                case 'K' :
-                case 'L' :
-                    count += 6;
-                    break;
-                case 'M' :
-                case 'N' :
-                case 'O' :
-                    count += 7;
-                    break;
-                case 'P' :
-                case 'Q' :
-                case 'R' :
-                case 'S' :
-                    count += 8;
-                    break;
-                case 'T' :
-                case 'U' :
-                case 'V' :
-                    count += 9;
-                    break;
-                case 'W' :
-                case 'X' :
-                case 'Y' :
-                case 'Z' :
-                    count += 10;
-                    break;
-            }
+            if(str.charAt(i) < 'D') count += 3;
+            else if(str.charAt(i) < 'G') count += 4;
+            else if(str.charAt(i) < 'J') count += 5;
+            else if(str.charAt(i) < 'M') count += 6;
+            else if(str.charAt(i) < 'P') count += 7;
+            else if(str.charAt(i) < 'T') count += 8;
+            else if(str.charAt(i) < 'W') count += 9;
+            else count += 10;
         }
         System.out.println(count);
     }

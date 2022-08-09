@@ -1,20 +1,23 @@
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class Main {
 
     static int[][] arr = new int[15][15];
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         apt();
 
-        Scanner sc = new Scanner(System.in);
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
 
-        int T = sc.nextInt();
+        int T = Integer.parseInt(br.readLine());
 
+        int k, n;
         for(int i = 0; i < T; i++) {
-            int k = sc.nextInt();
-            int n = sc.nextInt();
+            k = Integer.parseInt(br.readLine());
+            n = Integer.parseInt(br.readLine());
             sb.append(arr[k][n]).append("\n");
         }
         System.out.print(sb);

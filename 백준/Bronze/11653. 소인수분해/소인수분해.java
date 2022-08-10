@@ -7,17 +7,14 @@ public class Main {
 
         int N = sc.nextInt();
 
-        int i = 2;
-        while(true) {
-            if(N == 1) {
-                break;
-            }
-            if(N % i == 0) {
+        for(int i = 2; i * i <= N; i++) {
+            while(N % i == 0) {
                 N /= i;
                 System.out.println(i);
-            } else {
-                i++;
             }
+        }
+        if(N != 1) {
+            System.out.println(N);
         }
     }
 }

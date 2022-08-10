@@ -7,10 +7,13 @@ public class Main {
 
         int N = sc.nextInt();
 
-        int fact = 1;
-        for(int i = N; i > 0; i--) {
-            fact *= i;
+        System.out.println(get_factorial(N));
+    }
+
+    public static int get_factorial(int N) {
+        if(N <= 1) {
+            return 1;
         }
-        System.out.println(fact);
+        return N * get_factorial(N - 1);
     }
 }

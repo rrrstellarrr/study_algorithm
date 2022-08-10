@@ -14,15 +14,17 @@ public class Main {
 
         int T = Integer.parseInt(br.readLine());
 
-        for(int i = 0; i < T; i++) {
+        for(int i = 0; i < T; i ++) {
             int n = Integer.parseInt(br.readLine());
             int left = n / 2, right = n / 2;
 
-            for(int j = left, k = right; j > 0 && k <= n; j--, k++) {
-                if(!prime[j] && !prime[k]) {
-                    sb.append(j).append(" ").append(k).append("\n");
+            while(true) {
+                if (!prime[left] && !prime[right]) {
+                    sb.append(left).append(" ").append(right).append("\n");
                     break;
                 }
+                left--;
+                right++;
             }
         }
         System.out.print(sb);

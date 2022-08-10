@@ -1,13 +1,14 @@
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.util.Scanner;
-import java.util.StringTokenizer;
 
 public class Main {
+
+    static boolean[] prime = new boolean[10001];
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         StringBuilder sb = new StringBuilder();
+
+        isPrime();
 
         int M = sc.nextInt();
         int N = sc.nextInt();
@@ -15,11 +16,11 @@ public class Main {
         int min = N + 1;
 
         for(int i = M; i <= N; i++) {
-            if(isPrime(i)) {
-                sum += i;
-                if(i < min) {
+            if(!prime[i]) {
+                if(min > i) {
                     min = i;
                 }
+                sum += i;
             }
         }
         if(sum == 0) {
@@ -28,21 +29,17 @@ public class Main {
             sb.append(sum).append("\n");
             sb.append(min);
         }
-
         System.out.print(sb);
     }
 
-    public static boolean isPrime(int num) {
+    public static void isPrime() {
+        prime[0] = true;
+        prime[1] = true;
 
-        if(num == 1) {
-            return false;
-        }
-
-        for(int i = 2; i <= Math.sqrt(num); i++) {
-            if(num % i == 0) {
-                return false;
+        for(int i = 2; i <= Math.sqrt(10000); i++) {
+            for(int j = i * i; j < 10001; j += i) {
+                prime[j] =true;
             }
         }
-        return true;
     }
 }

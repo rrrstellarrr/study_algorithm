@@ -14,7 +14,7 @@ public class Main {
 
         int T = Integer.parseInt(br.readLine());
 
-        for(int i = 0; i < T; i ++) {
+        while(T > 0) {
             int n = Integer.parseInt(br.readLine());
             int left = n / 2, right = n / 2;
 
@@ -26,6 +26,7 @@ public class Main {
                 left--;
                 right++;
             }
+            T--;
         }
         System.out.print(sb);
     }

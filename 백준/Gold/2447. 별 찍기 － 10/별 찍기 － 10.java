@@ -1,3 +1,6 @@
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -5,9 +8,9 @@ public class Main {
 
     static char[][] arr;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Scanner sc = new Scanner(System.in);
-        StringBuilder sb = new StringBuilder();
+        BufferedWriter br = new BufferedWriter(new OutputStreamWriter(System.out));
 
         int N = sc.nextInt();
 
@@ -21,11 +24,11 @@ public class Main {
 
         for(int i = 0; i < N; i++) {
             for(int j = 0; j < N; j++) {
-                sb.append(arr[i][j]);
+                br.write(arr[i][j]);
             }
-            sb.append("\n");
+            br.write("\n");
         }
-        System.out.print(sb);
+        br.flush();
     }
 
     private static void star(int x, int y, int N) {

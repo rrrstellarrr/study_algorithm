@@ -1,4 +1,7 @@
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
 public class Main {
 
@@ -20,16 +23,17 @@ public class Main {
         return Math.min(white, 64 - white);
     }
 
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 
-        int N = sc.nextInt();
-        int M = sc.nextInt();
+        int N = Integer.parseInt(st.nextToken());
+        int M = Integer.parseInt(st.nextToken());
 
         String[] board = new String[N];
 
         for(int i = 0; i < N; i++) {
-            board[i] = sc.next();
+            board[i] = br.readLine();
         }
 
         int minCount = Integer.MAX_VALUE;
